@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from '../../hooks/useLocation/useLocation';
 import { useWeather } from '../../hooks/useWeather/useWeather';
 import { TodaysWeather } from '../../hooks/useWeather/types';
+import TemperatureInDegrees from '../temperatureInDegrees';
 
 function CurrentDayWeatherView({
   todaysWeather: {
@@ -14,13 +15,27 @@ function CurrentDayWeatherView({
   todaysWeather: TodaysWeather;
 }) {
   return (
-    <div>
-      <h2>Today's Weather</h2>
-      <p>Temperature: {temperature}°C</p>
-      <p>Description: {description}</p>
-      <p>Low Temperature: {tempLow}°C</p>
-      <p>High Temperature: {tempMax}°C</p>
+    //remember to style
+    <div className='WeatherViewContainer'>
+        <div className='CurrentDayWeatherView'>
+        <TemperatureInDegrees
+        temperature={temperature}
+        fontWeight={800}
+        fontSize={30}
+        isUpperCase
+        />
+          <div>
+              <p >Description: {description}</p>
+          </div>
+          </div>
+          <div className='CurrentDayweatherSummary'>
+              <p>Low Temperature: {tempLow}°C</p>
+              <p>High Temperature: {tempMax}°C</p>
+              <p>Current Tempreture: {temperature}°C</p>
+          </div>
+
     </div>
+    
   );
 }
 

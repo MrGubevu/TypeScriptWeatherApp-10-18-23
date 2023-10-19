@@ -61,6 +61,7 @@ export function useWeather(): {
     }
   };
 
+
   return { getCurrentWeather };
 }
 

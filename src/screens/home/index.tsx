@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useWeather } from '../../hooks/useWeather/useWeather';
 import { TodaysWeather } from '../../hooks/useWeather/types';
+import WeatherComponent from '../../components/weatherForecastView';
 
 function CurrentDayWeatherView({
   todaysWeather: {
@@ -14,8 +15,7 @@ function CurrentDayWeatherView({
 }) {
   return (
     <div>
-      <h2>Today's Weather</h2>
-      <p>Temperature: {temperature}°C</p>
+      <p>{temperature}°C</p>
       <p>Description: {description}</p>
       <p>Low Temperature: {tempLow}°C</p>
       <p>High Temperature: {tempMax}°C</p>
@@ -41,7 +41,9 @@ export const Home: React.FC = () => {
 
   return (
     <div>
+     
       {weatherData && <CurrentDayWeatherView todaysWeather={weatherData} />}
+      <WeatherComponent />
     </div>
   );
 };

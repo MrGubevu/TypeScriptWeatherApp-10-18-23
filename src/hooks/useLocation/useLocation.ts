@@ -1,5 +1,6 @@
 // hooks/useLocation.ts
-import Geolocation, { GeoPosition, GeoError } from "react-native-geolocation-service";
+import Geolocation from "@react-native-community/geolocation";
+import  { GeoPosition, GeoError } from "react-native-geolocation-service";
 import { CurrentCoordinates } from "../useLocation/types";
 
 export function useLocation(): {
